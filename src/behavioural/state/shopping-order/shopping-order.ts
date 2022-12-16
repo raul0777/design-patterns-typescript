@@ -1,5 +1,5 @@
-import { OrderPending } from './order-pending';
 import { ShoppingOrderState } from './shopping-order-state';
+import { OrderPending } from './order-pending';
 
 export class ShoppingOrder {
   private state: ShoppingOrderState = new OrderPending(this);
@@ -9,7 +9,7 @@ export class ShoppingOrder {
   }
 
   setState(state: ShoppingOrderState): void {
-    this.state.getName();
+    this.state = state;
     console.log(`O estado do pedido agora é ${this.getStateName()}`);
   }
 

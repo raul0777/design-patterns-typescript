@@ -1,3 +1,4 @@
+import { OrderPending } from './order-pending';
 import { OrderRejected } from './order-rejected';
 import { ShoppingOrder } from './shopping-order';
 import { ShoppingOrderState } from './shopping-order-state';
@@ -20,7 +21,7 @@ export class OrderApproved implements ShoppingOrderState {
   }
 
   waitPayment(): void {
-    this.order.setState(new OrderApproved(this.order));
+    this.order.setState(new OrderPending(this.order));
   }
 
   shipOrder(): void {
